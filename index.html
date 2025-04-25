@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookverse - Your Digital Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </div>
+        </label>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Bookverse</h1>
+                <p>Your Digital Library</p>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for books...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="categories">
+                <li data-category="fiction" class="active">Fiction</li>
+                <li data-category="science">Science</li>
+                <li data-category="history">History</li>
+                <li data-category="biography">Biography</li>
+                <li data-category="fantasy">Fantasy</li>
+                <li data-category="programming">Programming</li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="reading-list-toggle">
+                <button id="reading-list-btn">
+                    <i class="fas fa-bookmark"></i> My Reading List
+                    <span id="reading-list-count">0</span>
+                </button>
+            </div>
+            
+            <div id="books-container" class="books-grid"></div>
+            
+            <div id="loading">
+                <div class="spinner"></div>
+            </div>
+            
+            <div id="no-results" class="hidden">
+                <i class="fas fa-book-open"></i>
+                <p>No books found. Try a different search term.</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="book-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="book-cover">
+                    <img id="modal-book-cover" src="" alt="Book cover">
+                </div>
+                <div class="book-details">
+                    <h2 id="modal-book-title"></h2>
+                    <p id="modal-book-authors"></p>
+                    <div class="book-meta">
+                        <span id="modal-book-published"></span>
+                        <span id="modal-book-pages"></span>
+                    </div>
+                    <div class="book-rating">
+                        <span id="modal-book-rating"></span>
+                        <div class="stars"></div>
+                    </div>
+                    <p id="modal-book-description"></p>
+                    <div class="book-actions">
+                        <button id="add-to-reading-list" class="btn primary">
+                            <i class="fas fa-bookmark"></i> Add to Reading List
+                        </button>
+                        <a id="preview-link" class="btn secondary" target="_blank">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="reading-list-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>My Reading List</h2>
+            <div id="reading-list-container"></div>
+            <div id="empty-reading-list" class="hidden">
+                <i class="fas fa-book"></i>
+                <p>Your reading list is empty. Add books to get started!</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Bookverse. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
